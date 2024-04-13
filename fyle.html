@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fyle</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<div class="parent-box">
+		<form id="form">
+			<label for="gai-input">
+				Enter gross annual income  
+				<span class="tool-tip" name="annual-income">?</span>
+				<div class="tool-tip-box"  name="annual-income">Gross Annual Income is your total salary in a year before any deductions.</div>
+				<span class="wrong-form" name="annual-income">!</span>
+				<div class="wrong-form-box"  name="extra-income">Please Enter Number Only.</div>
+			</label>
+			<input type="text" id="gai-input" name="gai-input" data-name="annual-income" placeholder="Enter gross annual income"  required>
+			
+
+			<label for="extra-input">
+				Enter extra income  
+				<span class="tool-tip" name="extra-income">?</span>
+				<div class="tool-tip-box"  name="extra-income">Extra Income is additional earnings beyond your regular salary.</div>
+				<span class="wrong-form" name="extra-income">!</span>
+				<div class="wrong-form-box"  name="extra-income">Please Enter Number Only.</div>
+			</label>
+			<input type="text" id="extra-input" name="extra-input" data-name="extra-income" placeholder="Enter extra income"  required>
+
+			<label for="age-input">
+				Enter age group  
+				<span class="tool-tip" name="age-group">?</span>
+				<div class="tool-tip-box" name="age-group">Age Group is select your age range to calculate income estimation.</div>
+			</label>
+			<select name="age-input" id="age-input" form="form" data-name="age-group" placeholder="Enter age group" required>
+				<option value="" selected disabled hidden></option>
+				<option value="less-than-40">&leq; 40</option>
+				<option value="40-to-60">&geq; 40 &amp; &lt; 60</option>
+				<option value="60-above">&geq; 60</option>
+			</select>
+
+			<label for="tad-input">
+				Enter total applicable deductions  
+				<span class="tool-tip" name="deductions">?</span>
+				<div class="tool-tip-box" name="deductions">Deductions is any eligible expenses or reductions in income before tax calculation.</div>
+				<span class="wrong-form" name="deductions">!</span>
+				<div class="wrong-form-box"  name="deductions">Please Enter Number Only.</div>
+			</label>
+			<input type="text" id="tad-input" name="tad-input" data-name="deductions" placeholder="Enter total applicable deductions"  required>
+			
+
+			<button class="button-submit" type="submit" id="submit">Submit</button>
+
+		</form>
+	</div>
+
+	<div class="result-box">
+		<h1>Your overall income will be</h1>
+		<h2 id="result">0</h2>
+		<h5>after tax deductions</h5>
+		<button class="button-close" id="close">close</button>
+	</div>
+</body>
+
+</html>
